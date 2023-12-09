@@ -28,18 +28,19 @@ echo "deb https://mirrors.tuna.tsinghua.edu.cn/termux/termux-packages-24 stable 
 apt update
 apt install neofetch wget aria2 proot git -y
 
+pkg install proot-distro
+proot-distro install debian
+#echo "即将下载安装debian-sid"
+#wget -O default.html "https://mirrors.bfsu.edu.cn/lxc-images/images/debian/sid/arm64/default"
+#target=$(grep -m 1 -o '<td class="link"><a href=".*" title="' "default.html"| sed 's/<[^>]*>//g')
+#date="${target:9:-10}"
+#rm -rf default.html
+#DEF_CUR="https://mirrors.bfsu.edu.cn/lxc-images/images/debian/sid/arm64/default/$date/rootfs.tar.xz"
+#echo "======================================="
+#echo "==============开始下载================="
 
-echo "即将下载安装debian-sid"
-wget -O default.html "https://mirrors.bfsu.edu.cn/lxc-images/images/debian/sid/arm64/default"
-target=$(grep -m 1 -o '<td class="link"><a href=".*" title="' "default.html"| sed 's/<[^>]*>//g')
-date="${target:9:-10}"
-rm -rf default.html
-DEF_CUR="https://mirrors.bfsu.edu.cn/lxc-images/images/debian/sid/arm64/default/$date/rootfs.tar.xz"
-echo "======================================="
-echo "==============开始下载================="
-
-echo $DEF_CUR
-echo "======================================="
+#echo $DEF_CUR
+#echo "======================================="
 
 
 # 下载rootfs
