@@ -101,11 +101,11 @@ echo "为了兼容性考虑已将内核信息伪造成5.17.18-perf"
 
 echo "正在安装 Node.js"
 
-wget https://npmmirror.com/mirrors/node/v18.18.0/node-v18.18.0-linux-arm64.tar.xz
+wget https://npmmirror.com/mirrors/node/v18.18.0/node-v18.18.0-linux-armv7l.tar.xz
 # 解压并删除 nodejs 源文件
-tar -xvf node-v18.18.0-linux-arm64.tar.xz -C $sys_name-$AH/usr/local/
-rm node-v18.18.0-linux-arm64.tar.xz -f
-echo "export PATH=\$PATH:/usr/local/node-v18.18.0-linux-arm64/bin" >> $sys_name-$AH/etc/profile
+tar -xvf node-v18.18.0-linux-armv7l.tar -C $sys_name-$AH/usr/local/
+rm node-v18.18.0-linux-armv7l.tar -f
+echo "export PATH=\$PATH:/usr/local/node-v18.18.0-linux-armv7l/bin" >> $sys_name-$AH/etc/profile
 
 echo "正在设置国内 npm 镜像源"
 echo "registry=https://registry.npmmirror.com" > $sys_name-$AH/root/.npmrc
